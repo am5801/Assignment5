@@ -30,27 +30,39 @@ var redi_column = 'redi_nor_1'; // initially shows equal weigths REDI score
 
 $("#eqWeight").click(function(){
   redi_column = 'redi_nor_1';
-  //geojson.resetStyle();
+  console.log(redi_column);
+  //return redi_column;
+  //$("#map1").redraw();
 });
 $("#catSum").click(function(){
   redi_column = 'redi_pct_1';
-  //geojson.resetStyle();
+  console.log(redi_column);
+  //return redi_column;
+  //$("#map1").redraw();
 });
 $("#socInf").click(function(){
   redi_column = 'socredno_1';
-  //geojson.resetStyle();
+  console.log(redi_column);
+  //return redi_column;
+  //$("#map1").redraw();
 });
 $("#phyInf").click(function(){
   redi_column = 'infredno_1';
-  //geojson.resetStyle();
+  console.log(redi_column);
+  //return redi_column;
+  //$("#map1").redraw();
 });
 $("#envCond").click(function(){
   redi_column = 'envredno_1';
-  //geojson.resetStyle();
+  console.log(redi_column);
+  //return redi_column;
+  //$("#map1").redraw();
 });
 $("#econStr").click(function(){
   redi_column = 'ecoredno_1';
-  //geojson.resetStyle();
+  console.log(redi_column);
+  //return redi_column;
+  //$("#map1").redraw();
 });
 
 //this function returns a style object, but dynamically sets fillColor based on the data
@@ -109,3 +121,22 @@ $.getJSON('data/redi.geojson', function(redi_data) {
 });
 
 // map1.setZoom(9);
+var legend = L.control({position: 'bottomright'});
+
+legend.onAdd = function (map) {
+
+    var div = L.DomUtil.create('div', 'info legend'),
+        grades = [0, 10, 30, 50, 70, 90],
+        labels = [];
+
+    // loop through our density intervals and generate a label with a colored square for each interval
+    for (var i = 0; i < grades.length; i++) {
+        div.innerHTML +=
+            '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
+            grades[i] + (grades[i + 1] ? ' &ndash; ' + grades[i + 1] + '<br>' : ' &ndash; 100');
+    }
+
+    return div;
+};
+
+legend.addTo(map1);
