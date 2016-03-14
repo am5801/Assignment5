@@ -30,39 +30,63 @@ var redi_column = 'redi_nor_1'; // initially shows equal weigths REDI score
 
 $("#eqWeight").click(function(){
   redi_column = 'redi_nor_1';
-  console.log(redi_column);
-  //return redi_column;
-  //$("#map1").redraw();
+  $.getJSON('data/redi.geojson', function(redi_data) {
+  geojson = L.geoJson(redi_data,{
+    style: style,
+    onEachFeature: onEachFeature
+    }).addTo(map1);
+  });
+  //map1._resetView(map1.getCenter(), map1.getZoom(), true);
 });
 $("#catSum").click(function(){
   redi_column = 'redi_pct_1';
-  console.log(redi_column);
-  //return redi_column;
-  //$("#map1").redraw();
+  $.getJSON('data/redi.geojson', function(redi_data) {
+  geojson = L.geoJson(redi_data,{
+    style: style,
+    onEachFeature: onEachFeature
+    }).addTo(map1);
+  });
+  //map1._resetView(map1.getCenter(), map1.getZoom(), true);
 });
 $("#socInf").click(function(){
   redi_column = 'socredno_1';
-  console.log(redi_column);
-  //return redi_column;
-  //$("#map1").redraw();
+  $.getJSON('data/redi.geojson', function(redi_data) {
+  geojson = L.geoJson(redi_data,{
+    style: style,
+    onEachFeature: onEachFeature
+    }).addTo(map1);
+  });
+  //map1._resetView(map1.getCenter(), map1.getZoom(), true);
 });
 $("#phyInf").click(function(){
   redi_column = 'infredno_1';
-  console.log(redi_column);
-  //return redi_column;
-  //$("#map1").redraw();
+  $.getJSON('data/redi.geojson', function(redi_data) {
+  geojson = L.geoJson(redi_data,{
+    style: style,
+    onEachFeature: onEachFeature
+    }).addTo(map1);
+  });
+  //map1._resetView(map1.getCenter(), map1.getZoom(), true);
 });
 $("#envCond").click(function(){
   redi_column = 'envredno_1';
-  console.log(redi_column);
-  //return redi_column;
-  //$("#map1").redraw();
+  $.getJSON('data/redi.geojson', function(redi_data) {
+  geojson = L.geoJson(redi_data,{
+    style: style,
+    onEachFeature: onEachFeature
+    }).addTo(map1);
+  });
+  //map1._resetView(map1.getCenter(), map1.getZoom(), true);
 });
 $("#econStr").click(function(){
   redi_column = 'ecoredno_1';
-  console.log(redi_column);
-  //return redi_column;
-  //$("#map1").redraw();
+  $.getJSON('data/redi.geojson', function(redi_data) {
+  geojson = L.geoJson(redi_data,{
+    style: style,
+    onEachFeature: onEachFeature
+    }).addTo(map1);
+  });
+  //map1._resetView(map1.getCenter(), map1.getZoom(), true);
 });
 
 //this function returns a style object, but dynamically sets fillColor based on the data
@@ -121,6 +145,8 @@ $.getJSON('data/redi.geojson', function(redi_data) {
 });
 
 // map1.setZoom(9);
+
+// adding a legend to the map
 var legend = L.control({position: 'bottomright'});
 
 legend.onAdd = function (map) {
