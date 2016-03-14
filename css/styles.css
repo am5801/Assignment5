@@ -40,10 +40,10 @@
 	/*padding: 15px;*/
 	border-radius: 10px;
 	font-family: 'Alegreya Sans SC', sans-serif;
-	font-size: 24px;
+	font-size: 16px;
 	position: relative;
 	top: -490px;
-	width: 35%;
+	width: 25%;
 	/*display: inline;*/
 	margin-left: 70px;
 	text-align: center;
@@ -57,7 +57,7 @@
     color: #555;
     background-color: white;
     padding: 6px 8px;
-    font-size: 14px;
+    font-size: 16px;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     border-radius: 5px;*/
 }
